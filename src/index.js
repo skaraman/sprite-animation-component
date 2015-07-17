@@ -25,6 +25,8 @@ document.addEventListener('keydown', function(event) {
 }.bind(this));
 
 // sets the game Node to process the keydown listener from above
+// and fire an emit() to all children,
+// emit event is sent based on which button was pressed
 game.onReceive = function(event, payload) {
   if(event==='keydown'){
     switch (payload.keyCode) {
@@ -38,17 +40,22 @@ game.onReceive = function(event, payload) {
   }
 }
 
+// creating our 'character', in this case it's just a box
+// that has 66 animatino frames
 var boxNode = game.addChild();
 boxNode.framedata = fd.framedata.test_box;
 boxNode.setSizeMode('absolute', 'absolute')
     .setAbsoluteSize(160, 160)
     .setPosition(0,0,0);
 
+// adding the actual dom-element to the node
+// it's what shows our sprite image on our node!
 var boxElement = new DOMElement(boxNode);
 boxElement.setProperty('background-image', 'url(./assets/grid.png)');
 boxElement.setContent('Click Me');
 addAnimationComponent(boxNode);
 
+// function for adding animation component to a 'character'
 function addAnimationComponent(char){
   var myComponent = {
     id: null,
@@ -57,6 +64,12 @@ function addAnimationComponent(char){
         this.id = node.addComponent(this);
         this.node = node;
     },
+    // the character Node receieves an event from the game Node
+    // checks to see if the iterator is active
+    // if not, proceeds to create our animation Transitionable
+    // sets the 'state' which we want to go to as the total number of frames
+    // sets the duration to be the total of all the millisecond's for all frames
+    // and requests an update!
     onReceive: function (event, payload) {
       if(iterator>0){
         console.log("!!!!(uninteruptable) animation in progress!!!!");
@@ -73,6 +86,11 @@ function addAnimationComponent(char){
         this.node.animationTransitionable.from(0).to(frames.length, 'linear', duration, done);
       }
     },
+    // update was requested, so we check the current state of our Transitionable
+    // we want to fit our animation into each state of the transitionable, so that
+    // state = 1 would be the first animation, state = 2 is the second, so on so forth,
+    // we also use our iterator so we know when we have actually entered a valid state
+    // and drew our animation frame, otherwise we enter an invalid state and wait for a valid one
     onUpdate: function() {
       if(this.node.animationTransitionable._state < 1) boxNode.framedata.sequence.frameIterator = 0;
       if(this.node.animationTransitionable._state < iterator+1 && this.node.animationTransitionable._state >= iterator && this.node.animationTransitionable.isActive()) {
@@ -97,7 +115,8 @@ function addAnimationComponent(char){
     }
   };
   char.addComponent(myComponent);
-  // Callback for animationTransitionable
+  // Callback for animationTransitionable, since our transitionable will be done
+  // we want to reset our iterator for the next animation
   function done() {
     iterator = 0;
   }
