@@ -16,6 +16,9 @@ Sprite data is held in custom js file src/framedata.js. Data is stored in JSON i
 ```   
 Where 'frames' holds an array of objects that indicate the beginning x and y pixel of the frame in the sprite sheet and ms is the time in milliseconds for the frame to display (currently does not support variable frame rate; all ms values, even if different, are added together and the animation plays at a steady frame rate for the total duration).
 
+##Extra information
+> read src/index.js comments for more information 
+
 #Install
 ```bash
 $ git clone git@github.com:skaraman/sprite-animation-component.git
