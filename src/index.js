@@ -16,8 +16,6 @@ var fd = Framedata.init();
 var theScene = FamousEngine.createScene();
 var game = theScene.addChild();
 
-// iterator for animation frames
-var iterator = 0;
 
 // listen for keypresses on the document
 document.addEventListener('keydown', function(event) {
@@ -60,6 +58,11 @@ function addAnimationComponent(char){
   var myComponent = {
     id: null,
     node: null,
+    // Callback for animationTransitionable, since our transitionable will be done
+    // we want to reset our iterator for the next animation
+    done: function(node) {
+      node.framedata.active.frameIterator = 0;
+    },
     onMount: function (node) {
         this.id = node.addComponent(this);
         this.node = node;
@@ -71,19 +74,22 @@ function addAnimationComponent(char){
     // sets the duration to be the total of all the millisecond's for all frames
     // and requests an update!
     onReceive: function (event, payload) {
-      if(iterator>0){
-        console.log("!!!!(uninteruptable) animation in progress!!!!");
-      }
-      else{
-        this.node.framedata.active = this.node.framedata[event];
-        var frames = this.node.framedata.active.frames;
-        var duration=0;
-        for(var x=0; x < frames.length; x++){
-          duration += frames[x].ms;
+      if (this.node.framedata[event]) {
+        //confirm or set a
+        this.node.framedata.active = this.node.framedata.active ? this.node.framedata.active : this.node.framedata[event];
+        //if a is not node.framedata[event] and a.number is less than 1
+        if (this.node.framedata.active.event !== this.node.framedata[event] && this.node.framedata.active.frameIterator < 1) {
+          this.node.framedata.active = this.node.framedata[event];
+          this.node.framedata.active.event = event;
+          var frames = this.node.framedata.active.frames;
+          var duration=0;
+          for(var x=0; x < frames.length; x++){
+            duration += frames[x].ms;
+          }
+          this.node.animationTransitionable = new Transitionable(0);
+          this.node.requestUpdate(this.id);
+          this.node.animationTransitionable.from(0).to(frames.length, 'linear', duration, this.done, null, this.node);
         }
-        this.node.animationTransitionable = new Transitionable(0);
-        this.node.requestUpdate(this.id);
-        this.node.animationTransitionable.from(0).to(frames.length, 'linear', duration, done);
       }
     },
     // update was requested, so we check the current state of our Transitionable
@@ -93,31 +99,26 @@ function addAnimationComponent(char){
     // and drew our animation frame, otherwise we enter an invalid state and wait for a valid one
     onUpdate: function() {
       if(this.node.animationTransitionable._state < 1) boxNode.framedata.sequence.frameIterator = 0;
-      if(this.node.animationTransitionable._state < iterator+1 && this.node.animationTransitionable._state >= iterator && this.node.animationTransitionable.isActive()) {
+      if(this.node.animationTransitionable._state < this.node.framedata.active.frameIterator+1 && this.node.animationTransitionable._state >= this.node.framedata.active.frameIterator && this.node.animationTransitionable.isActive()) {
         var animation = this.node.framedata.active;
         var frames = animation.frames;
-        console.log('enetered valid animation state',frames[iterator],iterator,this.node.animationTransitionable._state);
+        //console.log('enetered valid animation state',frames[this.node.framedata.active.frameIterator],this.node.framedata.active.frameIterator,this.node.animationTransitionable._state);
         var forceMove = this.node.animationTransitionable.get();
-        console.log('next state :', forceMove);
-        boxElement.setProperty('background-position','-' + frames[iterator].x + 'px ' + '-' + frames[iterator].y + 'px')
-        iterator++;
+        //console.log('next state :', forceMove);
+        boxElement.setProperty('background-position','-' + frames[this.node.framedata.active.frameIterator].x + 'px ' + '-' + frames[this.node.framedata.active.frameIterator].y + 'px')
+        this.node.framedata.active.frameIterator++;
         this.node.requestUpdateOnNextTick(this.id);
-        console.log('left valid state')
+        //console.log('left valid state')
       }
       else if(this.node.animationTransitionable.isActive()) {
-        console.log('enetered invalid state');
-        console.log(this.node.animationTransitionable._state);
+        //console.log('enetered invalid state');
+        //console.log(this.node.animationTransitionable._state);
         var forceMove = this.node.animationTransitionable.get();
-        console.log('next state :', forceMove);
+        //console.log('next state :', forceMove);
         this.node.requestUpdateOnNextTick(this.id);
-        console.log('left invalid state');
+        //console.log('left invalid state');
       }
     }
   };
   char.addComponent(myComponent);
-  // Callback for animationTransitionable, since our transitionable will be done
-  // we want to reset our iterator for the next animation
-  function done() {
-    iterator = 0;
-  }
 }
