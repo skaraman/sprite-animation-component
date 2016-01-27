@@ -12888,22 +12888,31 @@ module.exports = shaders;
 "use strict";
 
 function Framedata() {
-  var _this = this;
+    var _this = this;
 }
+
 Framedata.prototype.init = function init() {
-  this.framedata = {
-    "test_box": {
-      "sequence": {
-        "frames": [{ "x": 0, "y": 0, "ms": 50 }, { "x": 160, "y": 0, "ms": 50 }, { "x": 320, "y": 0, "ms": 50 }, { "x": 480, "y": 0, "ms": 50 }, { "x": 640, "y": 0, "ms": 50 }, { "x": 800, "y": 0, "ms": 50 }, { "x": 960, "y": 0, "ms": 50 }, { "x": 1120, "y": 0, "ms": 50 }, { "x": 1280, "y": 0, "ms": 50 }, { "x": 1440, "y": 0, "ms": 50 }, { "x": 1600, "y": 0, "ms": 50 }, { "x": 0, "y": 160, "ms": 50 }, { "x": 160, "y": 160, "ms": 50 }, { "x": 320, "y": 160, "ms": 50 }, { "x": 480, "y": 160, "ms": 50 }, { "x": 640, "y": 160, "ms": 50 }, { "x": 800, "y": 160, "ms": 50 }, { "x": 960, "y": 160, "ms": 50 }, { "x": 1120, "y": 160, "ms": 50 }, { "x": 1280, "y": 160, "ms": 50 }, { "x": 1440, "y": 160, "ms": 50 }, { "x": 1600, "y": 160, "ms": 50 }, { "x": 0, "y": 320, "ms": 50 }, { "x": 160, "y": 320, "ms": 50 }, { "x": 320, "y": 320, "ms": 50 }, { "x": 480, "y": 320, "ms": 50 }, { "x": 640, "y": 320, "ms": 50 }, { "x": 800, "y": 320, "ms": 50 }, { "x": 960, "y": 320, "ms": 50 }, { "x": 1120, "y": 320, "ms": 50 }, { "x": 1280, "y": 320, "ms": 50 }, { "x": 1440, "y": 320, "ms": 50 }, { "x": 1600, "y": 320, "ms": 50 }, { "x": 0, "y": 480, "ms": 50 }, { "x": 160, "y": 480, "ms": 50 }, { "x": 320, "y": 480, "ms": 50 }, { "x": 480, "y": 480, "ms": 50 }, { "x": 640, "y": 480, "ms": 50 }, { "x": 800, "y": 480, "ms": 50 }, { "x": 960, "y": 480, "ms": 50 }, { "x": 1120, "y": 480, "ms": 50 }, { "x": 1280, "y": 480, "ms": 50 }, { "x": 1440, "y": 480, "ms": 50 }, { "x": 1600, "y": 480, "ms": 50 }, { "x": 0, "y": 640, "ms": 50 }, { "x": 160, "y": 640, "ms": 50 }, { "x": 320, "y": 640, "ms": 50 }, { "x": 480, "y": 640, "ms": 50 }, { "x": 640, "y": 640, "ms": 50 }, { "x": 800, "y": 640, "ms": 50 }, { "x": 960, "y": 640, "ms": 50 }, { "x": 1120, "y": 640, "ms": 50 }, { "x": 1280, "y": 640, "ms": 50 }, { "x": 1440, "y": 640, "ms": 50 }, { "x": 1600, "y": 640, "ms": 50 }, { "x": 0, "y": 800, "ms": 50 }, { "x": 160, "y": 800, "ms": 50 }, { "x": 320, "y": 800, "ms": 50 }, { "x": 480, "y": 800, "ms": 50 }, { "x": 640, "y": 800, "ms": 50 }, { "x": 800, "y": 800, "ms": 50 }, { "x": 960, "y": 800, "ms": 50 }, { "x": 1120, "y": 800, "ms": 50 }, { "x": 1280, "y": 800, "ms": 50 }, { "x": 1440, "y": 800, "ms": 50 }, { "x": 1600, "y": 800, "ms": 50 }],
-        "frameIterator": 0
-      },
-      "reverseSequence": {
-        "frames": [{ "x": 1600, "y": 800, "ms": 50 }, { "x": 1440, "y": 800, "ms": 50 }, { "x": 1280, "y": 800, "ms": 50 }, { "x": 1120, "y": 800, "ms": 50 }, { "x": 960, "y": 800, "ms": 50 }, { "x": 800, "y": 800, "ms": 50 }, { "x": 640, "y": 800, "ms": 50 }, { "x": 480, "y": 800, "ms": 50 }, { "x": 320, "y": 800, "ms": 50 }, { "x": 160, "y": 800, "ms": 50 }, { "x": 0, "y": 800, "ms": 50 }, { "x": 1600, "y": 640, "ms": 50 }, { "x": 1440, "y": 640, "ms": 50 }, { "x": 1280, "y": 640, "ms": 50 }, { "x": 1120, "y": 640, "ms": 50 }, { "x": 960, "y": 640, "ms": 50 }, { "x": 800, "y": 640, "ms": 50 }, { "x": 640, "y": 640, "ms": 50 }, { "x": 480, "y": 640, "ms": 50 }, { "x": 320, "y": 640, "ms": 50 }, { "x": 160, "y": 640, "ms": 50 }, { "x": 0, "y": 640, "ms": 50 }, { "x": 1600, "y": 480, "ms": 50 }, { "x": 1440, "y": 480, "ms": 50 }, { "x": 1280, "y": 480, "ms": 50 }, { "x": 1120, "y": 480, "ms": 50 }, { "x": 960, "y": 480, "ms": 50 }, { "x": 800, "y": 480, "ms": 50 }, { "x": 640, "y": 480, "ms": 50 }, { "x": 480, "y": 480, "ms": 50 }, { "x": 320, "y": 480, "ms": 50 }, { "x": 160, "y": 480, "ms": 50 }, { "x": 0, "y": 480, "ms": 50 }, { "x": 1600, "y": 320, "ms": 50 }, { "x": 1440, "y": 320, "ms": 50 }, { "x": 1280, "y": 320, "ms": 50 }, { "x": 1120, "y": 320, "ms": 50 }, { "x": 960, "y": 320, "ms": 50 }, { "x": 800, "y": 320, "ms": 50 }, { "x": 640, "y": 320, "ms": 50 }, { "x": 480, "y": 320, "ms": 50 }, { "x": 320, "y": 320, "ms": 50 }, { "x": 160, "y": 320, "ms": 50 }, { "x": 0, "y": 320, "ms": 50 }, { "x": 1600, "y": 160, "ms": 50 }, { "x": 1440, "y": 160, "ms": 50 }, { "x": 1280, "y": 160, "ms": 50 }, { "x": 1120, "y": 160, "ms": 50 }, { "x": 960, "y": 160, "ms": 50 }, { "x": 800, "y": 160, "ms": 50 }, { "x": 640, "y": 160, "ms": 50 }, { "x": 480, "y": 160, "ms": 50 }, { "x": 320, "y": 160, "ms": 50 }, { "x": 160, "y": 160, "ms": 50 }, { "x": 1600, "y": 0, "ms": 50 }, { "x": 1440, "y": 0, "ms": 50 }, { "x": 1280, "y": 0, "ms": 50 }, { "x": 1120, "y": 0, "ms": 50 }, { "x": 960, "y": 0, "ms": 50 }, { "x": 800, "y": 0, "ms": 50 }, { "x": 640, "y": 0, "ms": 50 }, { "x": 480, "y": 0, "ms": 50 }, { "x": 320, "y": 0, "ms": 50 }, { "x": 160, "y": 0, "ms": 50 }, { "x": 0, "y": 0, "ms": 50 }],
-        "frameIterator": 0
-      }
-    }
-  };
-  return this;
+    var ms = 1 / 60 * 1000; // "ms":ms= 1 frame @ 60FPS
+    this.framedata = {
+        "test_box": {
+            "sequence": {
+                "frames": [{ "x": 0, "y": 0, "ms": ms }, { "x": 160, "y": 0, "ms": ms }, { "x": 320, "y": 0, "ms": ms }, { "x": 480, "y": 0, "ms": ms }, { "x": 640, "y": 0, "ms": ms }, { "x": 800, "y": 0, "ms": ms }, { "x": 960, "y": 0, "ms": ms }, { "x": 1120, "y": 0, "ms": ms }, { "x": 1280, "y": 0, "ms": ms }, { "x": 1440, "y": 0, "ms": ms }, { "x": 1600, "y": 0, "ms": ms }, { "x": 0, "y": 160, "ms": ms }, { "x": 160, "y": 160, "ms": ms }, { "x": 320, "y": 160, "ms": ms }, { "x": 480, "y": 160, "ms": ms }, { "x": 640, "y": 160, "ms": ms }, { "x": 800, "y": 160, "ms": ms }, { "x": 960, "y": 160, "ms": ms }, { "x": 1120, "y": 160, "ms": ms }, { "x": 1280, "y": 160, "ms": ms }, { "x": 1440, "y": 160, "ms": ms }, { "x": 1600, "y": 160, "ms": ms }, { "x": 0, "y": 320, "ms": ms }, { "x": 160, "y": 320, "ms": ms }, { "x": 320, "y": 320, "ms": ms }, { "x": 480, "y": 320, "ms": ms }, { "x": 640, "y": 320, "ms": ms }, { "x": 800, "y": 320, "ms": ms }, { "x": 960, "y": 320, "ms": ms }, { "x": 1120, "y": 320, "ms": ms }, { "x": 1280, "y": 320, "ms": ms }, { "x": 1440, "y": 320, "ms": ms }, { "x": 1600, "y": 320, "ms": ms }, { "x": 0, "y": 480, "ms": ms }, { "x": 160, "y": 480, "ms": ms }, { "x": 320, "y": 480, "ms": ms }, { "x": 480, "y": 480, "ms": ms }, { "x": 640, "y": 480, "ms": ms }, { "x": 800, "y": 480, "ms": ms }, { "x": 960, "y": 480, "ms": ms }, { "x": 1120, "y": 480, "ms": ms }, { "x": 1280, "y": 480, "ms": ms }, { "x": 1440, "y": 480, "ms": ms }, { "x": 1600, "y": 480, "ms": ms }, { "x": 0, "y": 640, "ms": ms }, { "x": 160, "y": 640, "ms": ms }, { "x": 320, "y": 640, "ms": ms }, { "x": 480, "y": 640, "ms": ms }, { "x": 640, "y": 640, "ms": ms }, { "x": 800, "y": 640, "ms": ms }, { "x": 960, "y": 640, "ms": ms }, { "x": 1120, "y": 640, "ms": ms }, { "x": 1280, "y": 640, "ms": ms }, { "x": 1440, "y": 640, "ms": ms }, { "x": 1600, "y": 640, "ms": ms }, { "x": 0, "y": 800, "ms": ms }, { "x": 160, "y": 800, "ms": ms }, { "x": 320, "y": 800, "ms": ms }, { "x": 480, "y": 800, "ms": ms }, { "x": 640, "y": 800, "ms": ms }],
+                "frameIterator": 0,
+                "msTimer": 0
+            },
+            "sequence_timed": {
+                "frames": [{ "x": 0, "y": 0, "ms": 10 }, { "x": 160, "y": 0, "ms": 20 }, { "x": 320, "y": 0, "ms": 30 }, { "x": 480, "y": 0, "ms": 40 }, { "x": 640, "y": 0, "ms": 50 }, { "x": 800, "y": 0, "ms": 60 }, { "x": 960, "y": 0, "ms": 70 }, { "x": 1120, "y": 0, "ms": 80 }, { "x": 1280, "y": 0, "ms": 90 }, { "x": 1440, "y": 0, "ms": 100 }, { "x": 1600, "y": 0, "ms": 10 }, { "x": 0, "y": 160, "ms": 20 }, { "x": 160, "y": 160, "ms": 30 }, { "x": 320, "y": 160, "ms": 40 }, { "x": 480, "y": 160, "ms": 50 }, { "x": 640, "y": 160, "ms": 60 }, { "x": 800, "y": 160, "ms": 70 }, { "x": 960, "y": 160, "ms": 80 }, { "x": 1120, "y": 160, "ms": 90 }, { "x": 1280, "y": 160, "ms": 100 }, { "x": 1440, "y": 160, "ms": 10 }, { "x": 1600, "y": 160, "ms": 20 }, { "x": 0, "y": 320, "ms": 30 }, { "x": 160, "y": 320, "ms": 40 }, { "x": 320, "y": 320, "ms": 50 }, { "x": 480, "y": 320, "ms": 60 }, { "x": 640, "y": 320, "ms": 70 }, { "x": 800, "y": 320, "ms": 80 }, { "x": 960, "y": 320, "ms": 90 }, { "x": 1120, "y": 320, "ms": 100 }, { "x": 1280, "y": 320, "ms": 10 }, { "x": 1440, "y": 320, "ms": 20 }, { "x": 1600, "y": 320, "ms": 30 }, { "x": 0, "y": 480, "ms": 40 }, { "x": 160, "y": 480, "ms": 50 }, { "x": 320, "y": 480, "ms": 60 }, { "x": 480, "y": 480, "ms": 70 }, { "x": 640, "y": 480, "ms": 80 }, { "x": 800, "y": 480, "ms": 90 }, { "x": 960, "y": 480, "ms": 100 }, { "x": 1120, "y": 480, "ms": 10 }, { "x": 1280, "y": 480, "ms": 20 }, { "x": 1440, "y": 480, "ms": 30 }, { "x": 1600, "y": 480, "ms": 40 }, { "x": 0, "y": 640, "ms": 50 }, { "x": 160, "y": 640, "ms": 60 }, { "x": 320, "y": 640, "ms": 70 }, { "x": 480, "y": 640, "ms": 80 }, { "x": 640, "y": 640, "ms": 90 }, { "x": 800, "y": 640, "ms": 100 }, { "x": 960, "y": 640, "ms": 10 }, { "x": 1120, "y": 640, "ms": 20 }, { "x": 1280, "y": 640, "ms": 30 }, { "x": 1440, "y": 640, "ms": 40 }, { "x": 1600, "y": 640, "ms": 50 }, { "x": 0, "y": 800, "ms": 60 }, { "x": 160, "y": 800, "ms": 70 }, { "x": 320, "y": 800, "ms": 80 }, { "x": 480, "y": 800, "ms": 90 }, { "x": 640, "y": 800, "ms": 100 }],
+                "frameIterator": 0,
+                "msTimer": 0
+            },
+            "reverseSequence": {
+                "frames": [{ "x": 640, "y": 800, "ms": ms }, { "x": 480, "y": 800, "ms": ms }, { "x": 320, "y": 800, "ms": ms }, { "x": 160, "y": 800, "ms": ms }, { "x": 0, "y": 800, "ms": ms }, { "x": 1600, "y": 640, "ms": ms }, { "x": 1440, "y": 640, "ms": ms }, { "x": 1280, "y": 640, "ms": ms }, { "x": 1120, "y": 640, "ms": ms }, { "x": 960, "y": 640, "ms": ms }, { "x": 800, "y": 640, "ms": ms }, { "x": 640, "y": 640, "ms": ms }, { "x": 480, "y": 640, "ms": ms }, { "x": 320, "y": 640, "ms": ms }, { "x": 160, "y": 640, "ms": ms }, { "x": 0, "y": 640, "ms": ms }, { "x": 1600, "y": 480, "ms": ms }, { "x": 1440, "y": 480, "ms": ms }, { "x": 1280, "y": 480, "ms": ms }, { "x": 1120, "y": 480, "ms": ms }, { "x": 960, "y": 480, "ms": ms }, { "x": 800, "y": 480, "ms": ms }, { "x": 640, "y": 480, "ms": ms }, { "x": 480, "y": 480, "ms": ms }, { "x": 320, "y": 480, "ms": ms }, { "x": 160, "y": 480, "ms": ms }, { "x": 0, "y": 480, "ms": ms }, { "x": 1600, "y": 320, "ms": ms }, { "x": 1440, "y": 320, "ms": ms }],
+                "frameIterator": 0,
+                "msTimer": 0
+            }
+        }
+    };
+    return this;
 };
 
 module.exports = new Framedata();
@@ -12945,6 +12954,9 @@ game.onReceive = function (event, payload) {
                 case 67:
                     game.emit('reverseSequence', payload);
                     break;
+                case 65:
+                    game.emit('sequence_timed', payload);
+                    break;
             }
             break;
         case 'click':
@@ -12955,7 +12967,7 @@ game.onReceive = function (event, payload) {
 };
 
 // creating our 'character', in this case it's just a box
-// that has 66 animatino frames
+// that has 60 animation frames
 var boxNode = game.addChild();
 boxNode.framedata = fd.framedata.test_box;
 boxNode.setSizeMode('absolute', 'absolute').setAbsoluteSize(160, 160).setPosition(0, 0, 0);
@@ -12978,7 +12990,14 @@ function addAnimationComponent(char) {
         // Callback for animationTransitionable, since our transitionable will be done
         // we want to reset our iterator for the next animation
         done: function done(node) {
+            if (typeof node.framedata.active == 'null') {
+                node;
+            }
             node.framedata.active.frameIterator = 0;
+            node.framedata.active.msTimer = 0;
+            node.framedata.active = null;
+            node.animationTransitionable.halt();
+            console.log('Done ran');
         },
         onMount: function onMount(node) {
             this.id = node.addComponent(this);
@@ -13001,7 +13020,7 @@ function addAnimationComponent(char) {
                 //if active.frameIterator is less than 1, which indicates that the
                 //animation is not ongoing, and is instead in 'begin state'
                 //it's necessary to do this, because above we set an active
-                //animatin, so there will ALWAYS be an active aimation at this point
+                //animation, so there will ALWAYS be an active aimation at this point
                 //so we check the iterator to see it is truely active, or just been set above
                 if (this.node.framedata.active.frameIterator < 1 || payload.interupt) {
                     //else, the anamition must be ongoing if frameIterator has been increased
@@ -13017,12 +13036,13 @@ function addAnimationComponent(char) {
                     this.node.framedata.active.event = event;
                     var frames = this.node.framedata.active.frames;
                     var duration = 0;
+                    // determine the duration of this animation,
                     for (var x = 0; x < frames.length; x++) {
                         duration += frames[x].ms;
                     }
                     this.node.animationTransitionable = new Transitionable(0);
                     this.node.requestUpdate(this.id);
-                    this.node.animationTransitionable.from(0).to(frames.length, 'linear', duration, this.done, null, this.node);
+                    this.node.animationTransitionable.from(0).to(duration, 'linear', duration, this.done, null, this.node);
                 } else {}
             }
         },
@@ -13032,24 +13052,39 @@ function addAnimationComponent(char) {
         // we also use our iterator so we know when we have actually entered a valid state
         // and drew our animation frame, otherwise we enter an invalid state and wait for a valid one
         onUpdate: function onUpdate() {
-            if (this.node.animationTransitionable._state < 1) boxNode.framedata.sequence.frameIterator = 0;
-            if (this.node.animationTransitionable._state < this.node.framedata.active.frameIterator + 1 && this.node.animationTransitionable._state >= this.node.framedata.active.frameIterator && this.node.animationTransitionable.isActive()) {
+            if (this.node.framedata.active) {
                 var animation = this.node.framedata.active;
                 var frames = animation.frames;
-                //console.log('enetered valid animation state',frames[this.node.framedata.active.frameIterator],this.node.framedata.active.frameIterator,this.node.animationTransitionable._state);
-                var forceMove = this.node.animationTransitionable.get();
-                //console.log('next state :', forceMove);
-                boxElement.setProperty('background-position', '-' + frames[this.node.framedata.active.frameIterator].x + 'px ' + '-' + frames[this.node.framedata.active.frameIterator].y + 'px');
-                this.node.framedata.active.frameIterator++;
-                this.node.requestUpdateOnNextTick(this.id);
-                //console.log('left valid state')
-            } else if (this.node.animationTransitionable.isActive()) {
-                //console.log('enetered invalid state');
-                //console.log(this.node.animationTransitionable._state);
-                var forceMove = this.node.animationTransitionable.get();
-                //console.log('next state :', forceMove);
-                this.node.requestUpdateOnNextTick(this.id);
-                //console.log('left invalid state');
+                var transition = this.node.animationTransitionable;
+
+                if (transition._state < 1) {
+                    animation.frameIterator = 0;
+                    animation.msTimer = 0;
+                }
+                if (animation.frameIterator < frames.length) {
+                    if (transition._state < animation.msTimer + frames[animation.frameIterator].ms && transition._state >= animation.msTimer && animation != null) {
+                        console.log('entered valid animation state', frames[animation.frameIterator], animation.frameIterator, frames[animation.frameIterator].ms, transition._state);
+                        boxElement.setProperty('background-position', '-' + frames[animation.frameIterator].x + 'px ' + '-' + frames[animation.frameIterator].y + 'px');
+                        animation.msTimer += frames[animation.frameIterator].ms;
+                        animation.frameIterator++;
+                        var forceMove = transition.get();
+                        console.log('next state :', forceMove);
+                        this.node.requestUpdateOnNextTick(this.id);
+                        console.log('left valid state');
+                    } else if (transition.isActive()) {
+                        console.log('enetered invalid state');
+                        console.log(transition._state);
+                        var forceMove = transition.get();
+                        console.log('next state :', forceMove);
+                        this.node.requestUpdateOnNextTick(this.id);
+                        console.log('left invalid state');
+                    }
+                } else if (animation.frameIterator >= frames.length) {
+                    if (transition.isActive()) {
+                        transition.get();
+                        this.node.requestUpdateOnNextTick(this.id);
+                    }
+                }
             }
         }
     };
